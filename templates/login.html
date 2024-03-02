@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>user login</title>
+
+    <style>
+        /* Base styles */
+        body {
+            background-color: #edf2f7; /* Replace with your desired background color */
+        }
+
+        /* Container styles */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 4px;
+            margin: auto;
+            height: 100vh;
+        }
+
+        /* Form container styles */
+        .form-container {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Form content styles */
+        .form-content {
+            padding: 24px;
+        }
+
+        /* Heading styles */
+        .form-heading {
+            font-size: 1.5rem;
+            font-weight: bold;
+            line-height: 1.5;
+            color: #2d3748;
+        }
+
+        /* Input styles */
+        .input-label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #2d3748;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            border: 1px solid #e2e8f0;
+            border-radius: 4px;
+            background-color: #edf2f7;
+        }
+
+        /* Checkbox styles */
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .checkbox {
+            width: 16px;
+            height: 16px;
+            border: 1px solid #cbd5e0;
+            border-radius: 4px;
+            margin-right: 8px;
+        }
+
+        .checkbox-label {
+            font-size: 0.875rem;
+            color: #4a5568;
+        }
+
+        /* Button styles */
+        .submit-button {
+            width: 100%;
+            padding: 12px;
+            background-color: #4299e1;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* Additional styles */
+        .link {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #3182ce;
+            text-decoration: none;
+        }
+
+        .link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Login in to your account</h2>
+    <form action="{% url 'user_login' %}" method="post">
+        {% csrf_token %}
+        <p>Verification Email: mizbaofficial369@gmail.com<br>
+           Password: user@123
+        </p>
+        <label for="email" class="input-label">Email:</label>
+        <input type="text" id="email" name="email" class="input-field" required>
+
+        <label for="password" class="input-label">Password:</label>
+        <input type="password" id="password" name="password" class="input-field" required>
+
+        <button type="submit" class="submit-button">Login</button>
+    </form>
+</div>
+
+</body>
+</html>
